@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Set up &#8212; template 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting started" href="getting-started.html" />
+    <link rel="prev" title="template documentation!" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="getting-started.html" title="Getting started"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="template documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">template 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Set up</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section class="tex2jax_ignore mathjax_ignore" id="set-up">
+<h1>Set up<a class="headerlink" href="#set-up" title="Permalink to this headline">¶</a></h1>
+<section id="how-to-replicate">
+<h2>How to Replicate<a class="headerlink" href="#how-to-replicate" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">cookiecutter</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">{project_name}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">{project_name}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cookiecutter</span> <span class="pre">https://github.com/drivendata/cookiecutter-data-science</span></code></p></li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;# </span><span class="si">{project_name}</span><span class="s2">&quot;</span> <span class="o">&gt;&gt;</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<span class="n">git</span> <span class="n">init</span>
+<span class="n">git</span> <span class="n">add</span> <span class="n">README</span><span class="o">.</span><span class="n">md</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;first commit&quot;</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">M</span> <span class="n">main</span>
+<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="p">{</span><span class="n">github_username</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">project_name</span><span class="p">}</span><span class="o">.</span><span class="n">git</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">-</span><span class="n">u</span> <span class="n">origin</span> <span class="n">main</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">gh-pages</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">gh-pages</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">docs</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">&quot;#</span> <span class="pre">this</span> <span class="pre">file</span> <span class="pre">just</span> <span class="pre">tells</span> <span class="pre">gh</span> <span class="pre">to</span> <span class="pre">note</span> <span class="pre">use</span> <span class="pre">jekl&quot;</span> <span class="pre">&gt;&gt;</span> <span class="pre">docs/.nojekyll</span></code></p></li>
+<li><p>add commit and push to github</p></li>
+<li><p>got to GitHub &gt; settings &gt; pages and set source to the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch and <code class="docutils literal notranslate"><span class="pre">/docs</span></code> folder</p></li>
+</ol>
+<p>Thats pretty much it. You now have working sphinx docs. When you want to publish just build the html docs by going to the <code class="docutils literal notranslate"><span class="pre">{project_name}/docs</span></code> directory and running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>. Then move this to root with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">../..</span></code> , <code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">{project_name}/docs/_build/html/*</span> <span class="pre">docs/</span></code> and it should autmomatically but published.</p>
+<p>Check out this project example if you want to use markdown: https://github.com/serra/sphinx-with-markdown</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Set up</a><ul>
+<li><a class="reference internal" href="#how-to-replicate">How to Replicate</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">template documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="getting-started.html"
+                        title="next chapter">Getting started</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/how_to_set_up.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="getting-started.html" title="Getting started"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="template documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">template 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Set up</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright .
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

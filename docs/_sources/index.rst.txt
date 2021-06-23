@@ -6,11 +6,13 @@
 template documentation!
 ==============================================
 
+This is an example of the documentation that you can make using this template file.
 Contents:
 
 .. toctree::
    :maxdepth: 2
-
+   
+   how_to_set_up
    getting-started
    commands
 

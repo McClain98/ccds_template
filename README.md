@@ -35,7 +35,7 @@ template
 
 Thats pretty much it. You now have working sphinx docs. When you want to publish just build the html docs by going to the `{project_name}/docs` directory and running `make html`. Then move this to root with `cd ../..` , `mv {project_name}/docs/_build/html/* docs/` and it should autmomatically but published. 
 
-
+Check out this project example if you want to use markdown: https://github.com/serra/sphinx-with-markdown
 
 This is a template repo for ccds projects with nice published documentation
 
